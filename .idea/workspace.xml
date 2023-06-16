@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee877d95-dab8-4b47-b6e6-ba4eefee79a0" name="Changes" comment="HandlebarsTest">
-      <change afterPath="$PROJECT_DIR$/Helloworld.fo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/FopTest.java" afterDir="false" />
+    <list default="true" id="ee877d95-dab8-4b47-b6e6-ba4eefee79a0" name="Changes" comment="FopTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/HandlebarsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/HandlebarsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +44,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ruberg\OneDrive - ELO Digital Office GmbH\Dokumente\Entwicklung\IntelliJ\FopHandlebars" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ruberg\OneDrive - ELO Digital Office GmbH\Dokumente\Entwicklung\IntelliJ\FopHandlebars" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FopTest.TestFop">
+  <component name="RunManager" selected="JUnit.HandlebarsTest.TestConvertTemplate">
     <configuration name="FopTest.TestFop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FopHandlebars" />
       <extension name="coverage">
@@ -62,6 +63,22 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.FopTest" />
       <option name="METHOD_NAME" value="TestFop" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlebarsTest.TestConvertTemplate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FopHandlebars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.HandlebarsTest" />
+      <option name="METHOD_NAME" value="TestConvertTemplate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HandlebarsTest.TestConvertTemplate" />
         <item itemvalue="JUnit.FopTest.TestFop" />
         <item itemvalue="JUnit.HandlebarsTest.TestHandlebarsGson" />
         <item itemvalue="JUnit.HandlebarsTest.TestHandlebarsJackson" />
@@ -123,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686829479656</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="FopTest">
+      <created>1686907176337</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686907176337</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +164,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HandlebarsTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="HandlebarsTest" />
+    <MESSAGE value="FopTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="FopTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,6 +174,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/test/FopTest.java</url>
           <line>12</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/test/HandlebarsTest.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
