@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<fo:root font-family="ELO Sans Pro,Arial,Helvetica,sans-serif"
+	xmlns:fo="http://www.w3.org/1999/XSL/Format"
+	xmlns:fox="http://xmlgraphics.apache.org/fop/extensions">
+	<fo:layout-master-set>
+		<fo:simple-page-master master-name="Layout" page-height="29.7cm" page-width="21cm" margin-top="2cm" margin-bottom="2cm" margin-left="2cm" margin-right="2cm">
+			<fo:region-body />
+			<fo:region-after />
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<fo:page-sequence master-reference="Layout">
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block-container width="17cm" text-align="center" margin-top="15pt" margin-bottom="15pt">
+				<fo:block font-size="28pt" margin-top="56pt" margin-bottom="28pt" color="#004072">{{translate "sol.meeting_premium.document.fileHeader" settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+				<fo:block font-size="28pt" margin-bottom="112pt" color="#004072">{{meeting.objKeys.MEETING_REFERENCE}}. {{meeting.objKeys.MEETING_NAME}}</fo:block>
+
+				<fo:block font-size="16pt">{{meeting.objKeys.MEETING_BOARD_NAME}}</fo:block>
+				<fo:block font-size="16pt">
+					{{#ifCond meeting.objKeys.MEETING_STARTDATE '==' meeting.objKeys.MEETING_ENDDATE}}
+						{{formatDate 'DD.MM.YYYY' meeting.objKeys.MEETING_STARTDATE}}
+					{{else}}
+						{{formatDate 'DD.MM.YYYY' meeting.objKeys.MEETING_STARTDATE}} - {{formatDate 'DD.MM.YYYY' meeting.objKeys.MEETING_ENDDATE}}
+					{{/ifCond}}
+				</fo:block>
+				<fo:block font-size="16pt">{{meeting.objKeys.MEETING_LOCATION}} {{#if meeting.objKeys.MEETING_ROOM}}({{meeting.objKeys.MEETING_ROOM}}){{/if}}</fo:block>
+
+			</fo:block-container>
+			<fo:block-container width="17cm" margin-top="112pt">
+				<fo:table border-style="solid" border-width="1pt" border-color="#808182" table-layout="fixed" width="100%" text-align="left">
+					<fo:table-column column-width="4cm"/>
+					<fo:table-column column-width="4cm"/>
+					<fo:table-column column-width="4cm"/>
+					<fo:table-column column-width="4cm"/>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.status" settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{kwl:value meeting.objKeys.MEETING_STATUS}}</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.version" settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{meeting.nextVersion}}</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+
+
+						{{#each meeting.days}}
+							{{#ifCond @first '&&' @last}}
+						<fo:table-row>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.begin" ../settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{begin}}</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.end" ../settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{end}}</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+							{{else}}
+						<fo:table-row>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.begin" ../settings.mapKeys.CURRENT_LANGUAGE}} {{translate "sol.meeting_premium.document.day" ../settings.mapKeys.CURRENT_LANGUAGE}} {{@key}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{begin}}</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.end" ../settings.mapKeys.CURRENT_LANGUAGE}} {{translate "sol.meeting_premium.document.day" ../settings.mapKeys.CURRENT_LANGUAGE}} {{@key}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{end}}</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+							{{/ifCond}}
+						{{/each}}
+
+						<fo:table-row>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.minuteTaker" settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{meeting.objKeys.MEETING_MINUTE_TAKER}}</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.createdAt" settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{formatDate 'DD.MM.YYYY'}}</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt" font-weight="bold">{{translate "sol.meeting_premium.document.createdBy" settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+								<fo:block line-height="12pt" margin-bottom="5pt" margin-top="5pt" margin-left="3pt">{{meeting.documentOwner}}</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</fo:block-container>
+		</fo:flow>
+	</fo:page-sequence>
+
+	{{#each meeting.days}}
+		{{#if hasItems}}
+	<fo:page-sequence master-reference="Layout">
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block-container width="17cm" margin-top="3mm" text-align="left">
+			{{#ifCond @first '&&' @last}}
+				<fo:block font-size="14pt" text-align="center" font-weight="bold" margin-top="14pt" margin-bottom="14pt" color="#004072">{{translate "sol.meeting_premium.document.agenda" ../settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+				<fo:block font-size="12pt" text-align="center" margin-top="3pt">{{../meeting.objKeys.MEETING_NAME}}</fo:block>
+				<fo:block font-size="12pt" text-align="center" font-weight="bold" margin-top="3pt">{{../meeting.mapKeys.MEETING_WEEKDAY1}} {{formatDate 'DD.MM.YYYY' ../meeting.objKeys.MEETING_STARTDATE}}, {{begin}} - {{end}} Uhr</fo:block>
+				<fo:block font-size="12pt" text-align="center" margin-top="3pt">{{../meeting.objKeys.MEETING_LOCATION}}, {{../meeting.objKeys.MEETING_ROOM}}</fo:block>
+			{{else}}
+				<fo:block font-size="14pt" text-align="center" font-weight="bold" margin-top="14pt" margin-bottom="14pt" color="#004072">{{translate "sol.meeting_premium.document.agenda" ../settings.mapKeys.CURRENT_LANGUAGE}} [{{translate "sol.meeting_premium.document.day" ../settings.mapKeys.CURRENT_LANGUAGE}} {{@key}} / {{formatDate 'DD.MM.YYYY' date}}]</fo:block>
+				<fo:block font-size="12pt" text-align="center" margin-top="3pt">{{../meeting.objKeys.MEETING_NAME}}</fo:block>
+				<fo:block font-size="12pt" text-align="center" font-weight="bold" margin-top="3pt">{{formatDate 'DD.MM.YYYY' date}}, {{begin}} - {{end}} Uhr</fo:block>
+				<fo:block font-size="12pt" text-align="center" margin-top="3pt">{{../meeting.objKeys.MEETING_LOCATION}}, {{../meeting.objKeys.MEETING_ROOM}}</fo:block>
+
+			{{/ifCond}}
+			{{#each items}}
+				{{#ifCond objKeys.SOL_TYPE '==' 'MEETING_ITEM'}}
+				<fo:block font-size="12pt" font-weight="bold" margin-top="3pt" margin-left="0pt">{{objKeys.MEETING_ITEM_START}} Uhr</fo:block>
+
+				<fo:block font-size="12pt" font-weight="bold" margin-top="0pt" margin-left="0pt">
+					 <fo:basic-link internal-destination="{{@../key}}{{padLeft objKeys.MEETING_ITEM_OUTLINENUMBER "0"}}">
+				   TOP {{padLeft objKeys.MEETING_ITEM_OUTLINENUMBER "0"}} &#160;&#160;&#160;&#160;&#160;{{objKeys.MEETING_ITEM_TITLE}}
+           </fo:basic-link>
+				</fo:block>
+
+				<fo:block font-size="12pt" margin-top="0pt" margin-left="0pt">Gast: &#160;&#160;&#160;&#160;&#160;{{#if objKeys.MEETING_ITEM_SPEAKER}}{{objKeys.MEETING_ITEM_SPEAKER}}{{else}}<fo:inline font-style="italic">{{translate "sol.meeting_premium.document.notDefined" ../../settings.mapKeys.CURRENT_LANGUAGE}}</fo:inline>{{/if}}</fo:block>
+				<fo:block font-size="12pt" margin-top="0pt" margin-left="0pt">&#160;&#160;&#160;&#160;&#160;</fo:block>
+					{{/ifCond}}
+					{{#ifCond objKeys.SOL_TYPE '==' 'MEETING_ITEM_CONTAINER'}}
+				<fo:block font-size="12pt" font-weight="bold" margin-top="3pt" margin-left="0pt">TOP {{padLeft objKeys.MEETING_ITEM_OUTLINENUMBER "0"}} &#160;&#160;&#160;&#160;&#160;{{objKeys.MEETING_ITEM_TITLE}}</fo:block>
+				<fo:block font-size="12pt" margin-top="0pt" margin-left="0pt">&#160;&#160;&#160;&#160;&#160;</fo:block>
+					{{/ifCond}}
+				{{/each}}
+			</fo:block-container>
+		</fo:flow>
+	</fo:page-sequence>
+		{{/if}}
+	{{/each}}
+
+	<fo:page-sequence master-reference="Layout">
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block-container width="17cm" margin-top="3mm">
+				<fo:block font-size="14pt" text-align="left" margin-top="15pt" margin-bottom="5pt" font-weight="bold" color="#004072">{{translate "sol.meeting_premium.document.participantsList" settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+				<fo:block font-size="12pt" text-align="left" font-weight="bold">
+					<fo:table border-style="solid" border-width="1pt" border-color="#808182" table-layout="fixed" width="100%">
+						<fo:table-column column-width="5cm"/>
+						<fo:table-column column-width="7cm"/>
+						<fo:table-column column-width="5cm"/>
+						<fo:table-body>
+							<fo:table-row>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{translate "sol.meeting_premium.document.participants" settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+								</fo:table-cell>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{translate "sol.meeting_premium.document.participants.mail" settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+								</fo:table-cell>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="#808182">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{translate "sol.meeting_premium.document.participants.role" settings.mapKeys.CURRENT_LANGUAGE}}</fo:block>
+								</fo:table-cell>
+							</fo:table-row>
+						</fo:table-body>
+					</fo:table>
+				</fo:block>
+
+				{{#each meeting.participants}}
+				<fo:block font-size="12pt" text-align="left">
+					<fo:table border-style="solid" border-width="1pt" border-color="#808182" table-layout="fixed" width="100%">
+						<fo:table-column column-width="5cm"/>
+						<fo:table-column column-width="7cm"/>
+						<fo:table-column column-width="5cm"/>
+						<fo:table-body>
+							<fo:table-row>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="black">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{objKeys.MEETING_PERSON_FIRSTNAME}} {{objKeys.MEETING_PERSON_LASTNAME}}</fo:block>
+								</fo:table-cell>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="black">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{objKeys.MEETING_PERSON_EMAIL}}</fo:block>
+								</fo:table-cell>
+								<fo:table-cell border-style="solid" border-width="1pt" border-color="black">
+									<fo:block line-height="12pt" margin-top="5pt" margin-left="3pt" margin-bottom="5pt" text-align="left">{{objKeys.MEETING_PARTICIPANT_ROLE}}</fo:block>
+								</fo:table-cell>
+							</fo:table-row>
+						</fo:table-body>
+					</fo:table>
+				</fo:block>
+        {{/each}}
+			</fo:block-container>
+		</fo:flow>
+	</fo:page-sequence>
+
+{{#each meeting.days}}
+	{{#each items}}
+		{{#ifCond objKeys.SOL_TYPE '==' 'MEETING_ITEM'}}
+	<fo:page-sequence master-reference="Layout">
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block-container width="17cm" margin-top="3mm" text-align="left">
+				<fo:block id="{{@../key}}{{padLeft objKeys.MEETING_ITEM_OUTLINENUMBER "0"}}" font-size="14pt" color="#004072" margin-bottom="14pt" font-weight="bold">{{padLeft objKeys.MEETING_ITEM_OUTLINENUMBER "0"}}. {{objKeys.MEETING_ITEM_TITLE}}</fo:block>
+				<fo:block font-size="12pt" color="#004072" margin-top="3pt">{{translate "sol.meeting_premium.document.duration" ../../settings.mapKeys.CURRENT_LANGUAGE}}: {{objKeys.MEETING_ITEM_START}} - {{objKeys.MEETING_ITEM_END}} ({{objKeys.MEETING_ITEM_DURATION}} min)</fo:block>
+				<fo:block font-size="12pt" color="#004072" margin-top="3pt">{{translate "sol.meeting_premium.document.speaker" ../../settings.mapKeys.CURRENT_LANGUAGE}}: {{#if objKeys.MEETING_ITEM_SPEAKER}}{{objKeys.MEETING_ITEM_SPEAKER}}{{else}}<fo:inline font-style="italic">{{translate "sol.meeting_premium.document.notDefined" ../../settings.mapKeys.CURRENT_LANGUAGE}}</fo:inline>{{/if}}</fo:block>
+				{{#if desc}}{{htmlToFo desc}}{{/if}}
+
+				{{#if proposal.id}}
+				<fo:block font-size="12pt" margin-top="12pt" font-weight="bold">{{translate "sol.meeting_premium.document.proposal" ../../settings.mapKeys.CURRENT_LANGUAGE}}: {{proposal.name}}</fo:block>
+				<fo:block font-size="12pt" margin-top="3pt">({{proposal.objKeys.MEETING_PROPOSAL_CATEGORY}})</fo:block>
+				<fo:block font-size="12pt" margin-top="3pt">{{translate "sol.meeting_premium.document.status" ../../settings.mapKeys.CURRENT_LANGUAGE}}: {{kwl:value proposal.objKeys.MEETING_ITEM_STATUS}}</fo:block>
+					{{#if proposal.formBlobs.MEETING_PROPOSAL_TEXT}}
+				<fo:block font-size="12pt" margin-top="3pt">{{translate "sol.meeting_premium.form.proposal.text" ../../settings.mapKeys.CURRENT_LANGUAGE}}:</fo:block>
+						{{htmlToFo proposal.formBlobs.MEETING_PROPOSAL_TEXT}}
+					{{/if}}
+				{{/if}}
+
+				{{#ifCond attachments.length '>' 0}}
+				<fo:block font-size="12pt" margin-top="24pt" font-weight="bold">{{translate "sol.meeting_premium.document.attachments" ../../settings.mapKeys.CURRENT_LANGUAGE}} {{objKeys.MEETING_ITEM_TITLE}}</fo:block>
+				<fo:table width="100%" text-align-last="justify">
+					<fo:table-column column-width="100%"/>
+					<fo:table-body>
+					{{#each attachments}}
+						<fo:table-row>
+							<fo:table-cell>
+								<fo:block margin-top="3pt">
+									<fo:basic-link internal-destination="{{id}}">
+										{{name}}
+										<fo:inline>
+											<fo:leader leader-pattern="dots"/>
+										</fo:inline>
+										<fo:page-number-citation ref-id="{{id}}"/>
+									</fo:basic-link>
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					{{/each}}
+					</fo:table-body>
+				</fo:table>
+				{{/ifCond}}
+			</fo:block-container>
+		</fo:flow>
+	</fo:page-sequence>
+			{{#each attachments}}
+	<fox:external-document id="{{id}}" content-type="pdf" src="url('data:application/pdf;base64,{{base64Image objId='{{id}}'}}')"/>
+			{{/each}}
+		{{/ifCond}}
+	{{/each}}
+	{{/each}}
+</fo:root>
