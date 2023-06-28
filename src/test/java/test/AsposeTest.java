@@ -1,8 +1,6 @@
 package test;
 
-import com.aspose.cells.SaveFormat;
-import com.aspose.cells.Workbook;
-import com.aspose.cells.Worksheet;
+import com.aspose.cells.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -39,13 +37,17 @@ public class AsposeTest {
         String dirPath = "C:\\Temp\\TestConvertCSV";
         new File(dirPath).mkdir();
 
+        TxtSaveOptions opts = new TxtSaveOptions();
+        opts.setSeparator(';');
+
+
         Workbook workbook = new Workbook("C:\\Temp\\TestConvertCSV.xlsx");
 
         for(int idx = 0; idx < workbook.getWorksheets().getCount(); idx++) {
             String csvFileName = workbook.getWorksheets().get(idx).getName() + ".csv";
             Worksheet worksheet = workbook.getWorksheets().get(idx);
             worksheet.moveTo(0);
-            workbook.save(dirPath + "\\" + csvFileName, SaveFormat.CSV);
+            workbook.save(dirPath + "\\" + csvFileName, opts);
         }
 
         // Remove 'Evaluation' from CSV File
