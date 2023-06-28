@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee877d95-dab8-4b47-b6e6-ba4eefee79a0" name="Changes" comment="Handlebars convert template">
-      <change afterPath="$PROJECT_DIR$/Default.fo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extended.fo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AsposeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/HandlebarsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/HandlebarsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/ruberg/OneDrive - ELO Digital Office GmbH/Dokumente/Entwicklung/IntelliJ/FopHandlebars",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -54,7 +53,23 @@
       <recent name="C:\Users\ruberg\OneDrive - ELO Digital Office GmbH\Dokumente\Entwicklung\IntelliJ\FopHandlebars" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HandlebarsTest.TestConvertTemplate">
+  <component name="RunManager" selected="JUnit.AsposeTest.TestConvertExcelToCSV">
+    <configuration name="AsposeTest.TestConvertExcelToCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FopHandlebars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AsposeTest" />
+      <option name="METHOD_NAME" value="TestConvertExcelToCSV" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FopTest.TestFop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FopHandlebars" />
       <extension name="coverage">
@@ -121,6 +136,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AsposeTest.TestConvertExcelToCSV" />
         <item itemvalue="JUnit.HandlebarsTest.TestConvertTemplate" />
         <item itemvalue="JUnit.FopTest.TestFop" />
         <item itemvalue="JUnit.HandlebarsTest.TestHandlebarsGson" />
@@ -165,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686918127311</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Handlebars convert template">
+      <created>1687175696442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687175696442</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
