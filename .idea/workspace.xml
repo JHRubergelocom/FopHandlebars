@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee877d95-dab8-4b47-b6e6-ba4eefee79a0" name="Changes" comment="Aspose Convert Excel to CSV" />
+    <list default="true" id="ee877d95-dab8-4b47-b6e6-ba4eefee79a0" name="Changes" comment="Aspose Convert Excel to CSV">
+      <change afterPath="$PROJECT_DIR$/TestConvertCSV.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/AsposeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AsposeTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +53,23 @@
       <recent name="C:\Users\ruberg\OneDrive - ELO Digital Office GmbH\Dokumente\Entwicklung\IntelliJ\FopHandlebars" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AsposeTest.TestConvertExcelToCSV">
+  <component name="RunManager" selected="JUnit.AsposeTest.TestConvertExcelToCSV (1)">
+    <configuration name="AsposeTest.TestConvertExcelToCSV (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FopHandlebars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AsposeTest" />
+      <option name="METHOD_NAME" value="TestConvertExcelToCSV(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AsposeTest.TestConvertExcelToCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FopHandlebars" />
       <extension name="coverage">
@@ -114,29 +134,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandlebarsTest.TestHandlebarsJackson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FopHandlebars" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.HandlebarsTest" />
-      <option name="METHOD_NAME" value="TestHandlebarsJackson" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AsposeTest.TestConvertExcelToCSV (1)" />
         <item itemvalue="JUnit.AsposeTest.TestConvertExcelToCSV" />
         <item itemvalue="JUnit.HandlebarsTest.TestConvertTemplate" />
         <item itemvalue="JUnit.FopTest.TestFop" />
         <item itemvalue="JUnit.HandlebarsTest.TestHandlebarsGson" />
-        <item itemvalue="JUnit.HandlebarsTest.TestHandlebarsJackson" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687953606412</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Aspose Convert Excel to CSV">
+      <created>1687955321366</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687955321366</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
