@@ -37,7 +37,7 @@ public class AsposeTest {
         String dirPath = "C:\\Temp\\TestConvertCSV";
         new File(dirPath).mkdir();
 
-        TxtSaveOptions opts = new TxtSaveOptions();
+        TxtSaveOptions opts = new TxtSaveOptions(SaveFormat.CSV);
         opts.setSeparator(';');
 
 
